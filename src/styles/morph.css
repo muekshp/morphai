@@ -1,0 +1,74 @@
+/* Morph AI — layout-transparent wrappers for injected page markup.
+   display:contents removes the wrapper from the box tree, so the original
+   Morph/VamTam CSS (which never targets these divs) renders exactly as
+   it did in the static build. Also harmless for position:fixed children. */
+.morph-root {
+  display: contents;
+}
+
+/* Virtual Try-On Card Preview Image */
+.morph-tryon-card-img-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  min-height: 260px !important;
+  height: 260px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+  background-color: #f3f0ff !important;
+  background-image: none !important;
+}
+
+.morph-tryon-card-img-wrap::before {
+  display: none !important;
+}
+
+.morph-tryon-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 260px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  border-radius: 16px !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.vamtam-cont-hover-parent:hover .morph-tryon-card-img,
+.morph-tryon-card-img-wrap:hover .morph-tryon-card-img {
+  transform: scale(1.06);
+}
+
+/* Categories Images */
+.e-loop-item-40 .morph-element.morph-element-4160904:not(.morph-motion-effects-element-type-background),
+.e-loop-item-40 .morph-element.morph-element-4160904 > .morph-motion-effects-container > .morph-motion-effects-layer {
+  background-image: url("/categories/clothing.webp") !important;
+  background-position: center top !important;
+}
+
+.e-loop-item-42 .morph-element.morph-element-4160904:not(.morph-motion-effects-element-type-background),
+.e-loop-item-42 .morph-element.morph-element-4160904 > .morph-motion-effects-container > .morph-motion-effects-layer {
+  background-image: url("/categories/jewellery.webp") !important;
+  background-position: center center !important;
+}
+
+.e-loop-item-44 .morph-element.morph-element-4160904:not(.morph-motion-effects-element-type-background),
+.e-loop-item-44 .morph-element.morph-element-4160904 > .morph-motion-effects-container > .morph-motion-effects-layer {
+  background-image: url("/categories/footwear.webp") !important;
+  background-position: center center !important;
+}
+
+.e-loop-item-46 .morph-element.morph-element-4160904:not(.morph-motion-effects-element-type-background),
+.e-loop-item-46 .morph-element.morph-element-4160904 > .morph-motion-effects-container > .morph-motion-effects-layer {
+  background-image: url("/categories/accessories.webp") !important;
+  background-position: center center !important;
+}
+
+.e-loop-item-48 .morph-element.morph-element-4160904:not(.morph-motion-effects-element-type-background),
+.e-loop-item-48 .morph-element.morph-element-4160904 > .morph-motion-effects-container > .morph-motion-effects-layer {
+  background-image: url("/categories/ethnic-wear.webp") !important;
+  background-position: center top !important;
+}
+

@@ -1,0 +1,1 @@
+@keyframes morph-animation-pulse-grow{to{transform:scale(1.1)}}.morph-animation-pulse-grow:active,.morph-animation-pulse-grow:focus,.morph-animation-pulse-grow:hover{animation-name:morph-animation-pulse-grow;animation-duration:.3s;animation-timing-function:linear;animation-iteration-count:infinite;animation-direction:alternate}

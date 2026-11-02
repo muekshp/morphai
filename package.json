@@ -1,0 +1,28 @@
+{
+  "name": "morph-ai-website",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build && node -e \"const fs=require('fs'),p=require('path');const sa=p.join('.next','standalone');const root=fs.existsSync(p.join(sa,'server.js'))?sa:p.join(sa,'morph');fs.cpSync(p.join('.next','static'),p.join(root,'.next','static'),{recursive:true});fs.cpSync('public',p.join(root,'public'),{recursive:true});if(fs.existsSync('.env')){fs.copyFileSync('.env',p.join(root,'.env'));console.log('[build] .env copied into standalone bundle')}console.log('[build] standalone assets copied to '+root)\"",
+    "start": "NODE_ENV=production node -e \"const fs=require('fs'),p=require('path');const sa=p.join('.next','standalone');const flat=p.join(sa,'server.js');const nested=p.join(sa,'morph','server.js');require(fs.existsSync(flat)?flat:nested)\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.1.1",
+    "nodemailer": "^10.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.1.1",
+    "typescript": "^5"
+  },
+  "description": "Morph AI - Virtual Try-On API for Fashion E-commerce (Next.js 16 + TypeScript)"
+}
